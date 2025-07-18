@@ -1,0 +1,25 @@
+<!-- Tambahkan tombol Start Musik -->
+<div class="page active" id="page1">
+  <h1>👋 Hallo Mika Christian</h1>
+  <p>Apakah kamu siap membuka halaman ini? 😌</p>
+  <button onclick="startMusic()">Yuk buka 💖</button>
+</div>
+
+<script>
+  const audio = document.getElementById('bg-music');
+  let currentPage = 1;
+
+  function startMusic() {
+    audio.play().then(() => {
+      nextPage();
+    }).catch(err => {
+      alert("Klik sekali lagi ya, biar musiknya bisa dimulai 🎵");
+    });
+  }
+
+  function nextPage() {
+    document.getElementById("page" + currentPage).classList.remove("active");
+    currentPage++;
+    document.getElementById("page" + currentPage).classList.add("active");
+  }
+</script>
